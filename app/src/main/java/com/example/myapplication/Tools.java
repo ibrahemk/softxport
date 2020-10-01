@@ -40,8 +40,6 @@ public class Tools {
                 URL url = new URL(x);
                 urlConnection =
                         (HttpsURLConnection) url.openConnection();
-
-                urlConnection.setRequestProperty("Connection", "Keep-Alive");
                 urlConnection.setRequestMethod("GET");
 
                 urlConnection.connect();
