@@ -106,5 +106,6 @@ TextView title;
     public void onRefresh() {
         page=1;
         Tools.async(new GetCarslist_async(String.valueOf(page),getActivity(),list,empty),getActivity());
+        swipeRefreshLayout.setRefreshing(false);
     }
 }
