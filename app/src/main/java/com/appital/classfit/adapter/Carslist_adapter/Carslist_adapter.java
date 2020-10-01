@@ -42,14 +42,15 @@ import java.util.HashMap;
 
 public class Carslist_adapter extends  RecyclerView.Adapter<Carslist_adapter.MyViewHolder> {
 
+
+
+   public ArrayList<Car>list;
+    FragmentActivity activity;
+    private View itemView;
     public Carslist_adapter(ArrayList<Car> list, FragmentActivity activity) {
         this.list = list;
         this.activity = activity;
     }
-
-    ArrayList<Car>list;
-    FragmentActivity activity;
-    private View itemView;
 
 
     @Override

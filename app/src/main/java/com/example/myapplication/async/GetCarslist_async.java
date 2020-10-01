@@ -64,8 +64,19 @@ if (re!=null&&re.trim().length()>0){
         if (carslist!=null&&empty!=null){
 carslist.setVisibility(View.VISIBLE);
 empty.setVisibility(View.GONE);
-            Carslist_adapter carslist_adapter=new Carslist_adapter(list,activity);
-            carslist.setAdapter(carslist_adapter);
+if (page!=null&&page.equals("1")) {
+    Carslist_adapter carslist_adapter = new Carslist_adapter(list, activity);
+    carslist.setAdapter(carslist_adapter);
+}else {
+    if (carslist!=null&&carslist.getAdapter()!=null)
+    {
+        Carslist_adapter carslist_adapter=(Carslist_adapter) carslist.getAdapter();
+        if (carslist_adapter!=null){
+            carslist_adapter.list.addAll(list);
+            carslist_adapter.notifyDataSetChanged();
+        }
+    }
+}
         }
     }else {
 if (carslist!=null&&empty!=null&&((carslist.getAdapter()!=null)||(carslist.getAdapter()!=null&&carslist.getAdapter().getItemCount()==0))){
